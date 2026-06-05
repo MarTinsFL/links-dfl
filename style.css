@@ -1,0 +1,344 @@
+:root {
+  --azul-marinho: #27336D;
+  --azul-claro: #00ACD1;
+  --azul-claro-hover: #16c7e8;
+  --branco: #ffffff;
+  --texto: #14213d;
+  --sombra: rgba(39, 51, 109, 0.22);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(0, 172, 209, 0.35), transparent 35%),
+    linear-gradient(145deg, #f6feff 0%, #dff8ff 45%, #ffffff 100%);
+  overflow-x: hidden;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  padding: 32px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-shape {
+  position: fixed;
+  z-index: 0;
+  border-radius: 38% 62% 48% 52% / 42% 38% 62% 58%;
+  filter: blur(1px);
+  opacity: 0.32;
+  animation: floatShape 9s ease-in-out infinite alternate;
+}
+
+.shape-one {
+  width: 340px;
+  height: 520px;
+  right: -130px;
+  top: -90px;
+  background: var(--azul-claro);
+}
+
+.shape-two {
+  width: 260px;
+  height: 360px;
+  left: -120px;
+  bottom: -80px;
+  background: var(--azul-marinho);
+  animation-delay: 1.5s;
+}
+
+.shape-three {
+  width: 170px;
+  height: 240px;
+  left: 8%;
+  top: 10%;
+  background: rgba(0, 172, 209, 0.18);
+  animation-delay: 0.7s;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 430px);
+  padding: 34px 24px 24px;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 28px 80px var(--sombra);
+  backdrop-filter: blur(22px);
+  text-align: center;
+  overflow: hidden;
+  animation: cardEntry 0.9s ease both;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(0, 172, 209, 0.18), transparent 35%),
+    linear-gradient(315deg, rgba(39, 51, 109, 0.12), transparent 42%);
+  pointer-events: none;
+}
+
+.logo-area,
+.greeting,
+h1,
+.subtitle,
+.links,
+footer {
+  position: relative;
+  z-index: 2;
+}
+
+.logo-area {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 16px;
+  border-radius: 32px;
+  background: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 18px 35px rgba(39, 51, 109, 0.16);
+}
+
+.logo {
+  width: 78px;
+  height: auto;
+  display: block;
+}
+
+.greeting {
+  width: fit-content;
+  margin: 0 auto 8px;
+  font-family: "KoHo", sans-serif;
+  color: var(--azul-claro);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.greeting::after {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 2px;
+  margin: 6px auto 0;
+  border-radius: 999px;
+  background: var(--azul-claro);
+  opacity: 0.9;
+}
+
+h1 {
+  font-family: "KoHo", sans-serif;
+  color: var(--azul-marinho);
+  font-size: 31px;
+  line-height: 1.05;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: rgba(20, 33, 61, 0.72);
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: 320px;
+  margin: 0 auto 26px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link-button {
+  position: relative;
+  min-height: 58px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--azul-marinho), var(--azul-claro));
+  color: var(--branco);
+  text-decoration: none;
+  font-family: "KoHo", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 36px 1fr 30px;
+  align-items: center;
+  border: 0;
+  box-shadow: 0 10px 0 rgba(39, 51, 109, 0.95);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    filter 0.35s ease;
+  overflow: hidden;
+}
+
+.link-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 45%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+
+.link-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.22), transparent 25%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.link-button:hover::before,
+.link-button:focus::before {
+  transform: translateX(120%);
+}
+
+.link-button:hover::after,
+.link-button:focus::after {
+  opacity: 1;
+}
+
+.link-button:hover,
+.link-button:focus {
+  transform: translateY(6px) scale(1.025);
+  box-shadow:
+    0 4px 0 rgba(39, 51, 109, 0.95),
+    0 18px 36px rgba(0, 172, 209, 0.24);
+  background: linear-gradient(135deg, #263a85, var(--azul-claro-hover));
+  filter: saturate(1.08);
+}
+
+.link-button:active {
+  transform: translateY(10px) scale(0.98);
+  box-shadow: 0 0 0 rgba(39, 51, 109, 0.95);
+}
+
+.link-button.clicked {
+  animation: clickPulse 0.45s ease;
+}
+
+.icon {
+  position: relative;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--branco);
+  font-size: 13px;
+}
+
+.link-button span:nth-child(2) {
+  position: relative;
+  z-index: 2;
+}
+
+.arrow {
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+  transition: transform 0.35s ease;
+}
+
+.link-button:hover .arrow {
+  transform: translateX(5px);
+}
+
+footer {
+  margin-top: 26px;
+  color: rgba(39, 51, 109, 0.65);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes cardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(34px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatShape {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(28px) rotate(8deg);
+  }
+}
+
+@keyframes clickPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(0.96);
+  }
+
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 22px 14px;
+  }
+
+  .card {
+    border-radius: 28px;
+    padding: 28px 18px 22px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .link-button {
+    font-size: 15px;
+    min-height: 56px;
+  }
+
+  .greeting {
+    font-size: 14px;
+  }
+}
