@@ -169,16 +169,16 @@ h1 {
   margin: 0 auto 24px;
   padding: 11px 14px;
   border-radius: 16px;
-  background: rgba(0, 172, 209, 0.09);
+  background: red;
   border: 1px solid rgba(0, 172, 209, 0.22);
-  color: rgba(39, 51, 109, 0.82);
-  font-size: 12.5px;
+  color: white;
+  font-size: 14px;
   line-height: 1.45;
   box-shadow: 0 10px 26px rgba(0, 172, 209, 0.08);
 }
 
 .security-warning strong {
-  color: var(--azul-marinho);
+  color: white;
   font-weight: 800;
 }
 
