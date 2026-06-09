@@ -31,32 +31,62 @@
         Seja bem-vindo! Acesse aqui os principais canais da DFL.
       </p>
 
+      <div class="security-warning">
+        <strong>ATENÇÃO:</strong>
+        Ao finalizar suas tarefas, lembre-se de <strong>sair da sua conta.</strong>
+      </div>
+
       <div class="links">
-        <a class="link-button" href="https://dfl.fluigidentity.com/ui/login?forward=/SPInitPost/receiveSSORequest/096t0ngnc89p15w51542109156105/fzewyt978l41jhvh1545518287545" target="_blank" rel="noopener">
+        <a
+          class="link-button js-alert-link"
+          href="https://dfl.fluigidentity.com/ui/login?forward=/SPInitPost/receiveSSORequest/096t0ngnc89p15w51542109156105/fzewyt978l41jhvh1545518287545"
+          target="_blank"
+          rel="noopener"
+        >
           <span class="icon">✦</span>
           <span>Fluig</span>
           <span class="arrow">→</span>
         </a>
 
-        <a class="link-button" href="https://dfl.interact.com.br/sa/apps/cmn/LauncherLogin.jsp" target="_blank" rel="noopener">
+        <a
+          class="link-button js-alert-link"
+          href="https://dfl.interact.com.br/sa/apps/cmn/LauncherLogin.jsp"
+          target="_blank"
+          rel="noopener"
+        >
           <span class="icon">◈</span>
           <span>Interact</span>
           <span class="arrow">→</span>
         </a>
 
-        <a class="link-button" href="https://dflindustria141980.protheus.cloudtotvs.com.br:2004/meurh0301/#/login" target="_blank" rel="noopener">
+        <a
+          class="link-button js-alert-link"
+          href="https://dflindustria141980.protheus.cloudtotvs.com.br:2004/meurh0301/#/login"
+          target="_blank"
+          rel="noopener"
+        >
           <span class="icon">▣</span>
           <span>Meu RH</span>
           <span class="arrow">→</span>
         </a>
 
-        <a class="link-button" href="https://reset.dfl.com.br/" target="_blank" rel="noopener">
+        <a
+          class="link-button js-alert-link"
+          href="https://reset.dfl.com.br/"
+          target="_blank"
+          rel="noopener"
+        >
           <span class="icon">↻</span>
           <span>Reset de Senha</span>
           <span class="arrow">→</span>
         </a>
 
-        <a class="link-button" href="beneficios.pdf" target="_blank" rel="noopener">
+        <a
+          class="link-button js-alert-link"
+          href="CARTILHA%20DE%20BENEF%C3%8DCIOS%203.pdf"
+          target="_blank"
+          rel="noopener"
+        >
           <span class="icon">◎</span>
           <span>Benefícios</span>
           <span class="arrow">→</span>
@@ -68,6 +98,24 @@
       </footer>
     </section>
   </main>
+
+  <div class="alert-modal" id="alertModal">
+    <div class="alert-backdrop" id="alertBackdrop"></div>
+
+    <div class="alert-box">
+      <div class="alert-icon">!</div>
+
+      <h2>Alerta de segurança</h2>
+
+      <p>
+        Quando terminar suas tarefas, não se esqueça de sair da sua conta.
+      </p>
+
+      <button type="button" class="alert-ok" id="alertOk">
+        OK, continuar
+      </button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

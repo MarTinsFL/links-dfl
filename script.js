@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const buttons = document.querySelectorAll(".link-button");
+  const alertLinks = document.querySelectorAll(".js-alert-link");
+  const alertModal = document.getElementById("alertModal");
+  const alertOk = document.getElementById("alertOk");
+
+  let selectedUrl = "";
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -20,5 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
         button.classList.remove("clicked");
       }, 500);
     });
+  });
+
+  alertLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      selectedUrl = link.getAttribute("href");
+
+      alertModal.classList.add("active");
+    });
+  });
+
+  alertOk.addEventListener("click", () => {
+    alertModal.classList.remove("active");
+
+    if (selectedUrl) {
+      window.open(selectedUrl, "_blank", "noopener");
+      selectedUrl = "";
+    }
   });
 });
