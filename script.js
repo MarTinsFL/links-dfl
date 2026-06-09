@@ -14,8 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const alertLinks = document.querySelectorAll(".js-alert-link");
   const alertModal = document.getElementById("alertModal");
   const alertOk = document.getElementById("alertOk");
+  const alertClose = document.getElementById("alertClose");
 
   let selectedUrl = "";
+
+  function closeAlert() {
+    alertModal.classList.remove("active");
+    selectedUrl = "";
+  }
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -45,4 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
       selectedUrl = "";
     }
   });
+
+  alertClose.addEventListener("click", closeAlert);
 });

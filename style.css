@@ -169,17 +169,17 @@ h1 {
   margin: 0 auto 24px;
   padding: 11px 14px;
   border-radius: 16px;
-  background: red;
+  background: rgba(0, 172, 209, 0.09);
   border: 1px solid rgba(0, 172, 209, 0.22);
-  color: white;
-  font-size: 14px;
+  color: rgba(39, 51, 109, 0.82);
+  font-size: 12.5px;
   line-height: 1.45;
   box-shadow: 0 10px 26px rgba(0, 172, 209, 0.08);
 }
 
 .security-warning strong {
-  color: white;
-  font-weight: bold;
+  color: var(--azul-marinho);
+  font-weight: 800;
 }
 
 .links {
@@ -331,7 +331,7 @@ footer {
 .alert-box {
   position: relative;
   width: min(100%, 390px);
-  padding: 30px 26px 26px;
+  padding: 36px 26px 26px;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.9);
@@ -343,6 +343,35 @@ footer {
 
 .alert-modal.active .alert-box {
   transform: translateY(0) scale(1);
+}
+
+.alert-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(39, 51, 109, 0.08);
+  color: var(--azul-marinho);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.alert-close:hover {
+  background: var(--azul-marinho);
+  color: var(--branco);
+  transform: rotate(90deg) scale(1.05);
 }
 
 .alert-icon {
@@ -471,10 +500,16 @@ footer {
 
   .alert-box {
     border-radius: 24px;
-    padding: 28px 22px 24px;
+    padding: 36px 22px 24px;
   }
 
   .alert-box h2 {
+    font-size: 23px;
+  }
+
+  .alert-close {
+    width: 32px;
+    height: 32px;
     font-size: 23px;
   }
 }
